@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>untitled</title>
+	
+	<style type="text/css">
+	/* The functional CSS. */
+	.dropdown
+	{
+		/* So the menu items within can be positioned on top of the label. */
+		position: relative;
+		
+		/* So the whole thing is only as wide as the menu label. */
+		display: inline-block;
+	}
+	.dropdown > .dropdown-menuitems
+	{
+		/* Hide initially. */
+		display: none;
+		
+		/* When they're revealed, position them on top of the label. */
+		position: absolute;
+		top: 0;
+	}
+	.dropdown:active > .dropdown-menuitems,	/* When the dropdown has been clicked on... */
+	.dropdown > .dropdown-menuitems:hover	/* ...or is being hovered over... */
+	{
+		/* ...show it! */
+		display: inherit;
+		
+		/* So the menu items are at least as wide as the menu label. */
+		width: 100%;
+	}
+	
+	/* not functional, just to make more pretty */
+	.dropdown
+	{
+		/* Don't let people select anything. */
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		
+		position: relative;
+	}
+	.dropdown:focus
+	{
+		outline: none;
+	}
+	.dropdown > .dropdown-label
+	{
+		cursor: pointer;
+	}	
+	.dropdown > .dropdown-label,
+	.dropdown > .dropdown-menuitems
+	{
+		border: 1px solid black;
+		border-radius: 3px;
+	}
+	.dropdown > .dropdown-label,
+	.dropdown > .dropdown-menuitems a
+	{		
+		padding: 5px;
+	}
+	.dropdown > .dropdown-menuitems
+	{
+		background-color: white;
+	}
+	.dropdown > .dropdown-menuitems a
+	{
+		display: block;
+		border-bottom: 1px solid black;
+		text-decoration: none;
+	}
+	.dropdown > .dropdown-menuitems a:last-child
+	{
+		border-bottom-width: 0px;
+	}
+	.dropdown > .dropdown-menuitems a:hover
+	{
+		background-color: yellow;
+	}
+	</style>
+</head>
+<body>
+
+<p>This demonstrates how to do a purely CSS drop-down menu that you click on to open and un-hover or un-focus to close.</p>
+
+<div class="dropdown" tabindex="1">
+	<div class="dropdown-label">Dropdown Menu Label</div>
+	<nav class="dropdown-menuitems">
+		<a href="#">Menu Item</a>
+		<a href="#">Menu Item</a>
+		<a href="#">Menu Item</a>
+		<a href="#">Menu Item with a very long name</a>
+	</nav>
+</div>
+
+</body>
+</html>
