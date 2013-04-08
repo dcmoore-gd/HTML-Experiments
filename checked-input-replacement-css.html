@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>fancy-option-using-css</title>
+
+	<style type="text/css">
+	/* This is the functional part. */
+	.option > input + span:after
+	{
+		content: '☐';
+	}
+	.option > input:checked + span:after
+	{
+		content: '☑';
+	}
+	
+	/* WebKit bug [http://stackoverflow.com/questions/9448286/how-to-make-css-after-before-content-clickable-on-a-label-element]
+	 * This needs to be applied to the label wherever it is.	
+	 */
+	.option
+	{
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	/* This is one way to hide the existing checkbox.
+	 * Methods like 'display: none' don't work in some browsers because then the checkbox isn't used at all.
+	 */
+	.option
+	{
+		overflow: hidden;
+		position: relative;
+	}
+	.option > input
+	{
+		position: absolute;
+		left: -50px;
+
+		width: 0px;
+		height: 0px;		
+	}
+		
+	/* not functional, just to make more pretty */
+	label
+	{
+		cursor: pointer;
+	}
+	.option > span
+	{
+		font-size: 2em;
+		line-height: 1em;
+		position: relative;
+		top: -3px;
+	}
+	</style>
+</head>
+<body>
+	
+<p>This demonstrates how to do a pure CSS replacement of the input widget for both radio buttons and checkboxes.</p>	
+
+<form>
+	<fieldset>
+		<legend>Radio buttons</legend>
+
+		<div>
+			Radio Button 1
+			<label class="option" for="radio-1"><input type="radio" name="radio" value="radio-1" id="radio-1"><span></span></label>
+		</div>
+		<div>
+			Radio Button 2
+			<label class="option" for="radio-2"><input type="radio" name="radio" value="radio-2" id="radio-2"><span></span></label>
+		</div>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Checkbox buttons</legend>
+
+		<div>
+			Checkbox 1
+			<label class="option"><input type="checkbox" name="checkbox" value="checkbox-1"><span></span></label>
+		</div>
+		<div>
+			Checkbox 2
+			<label class="option"><input type="checkbox" name="checkbox" value="checkbox-2"><span></span></label>
+		</div>
+	</fieldset>
+	
+</form>
+
+</body>
+</html>
