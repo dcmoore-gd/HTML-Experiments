@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>fancy-option-using-css</title>
+	<title>Pure CSS: Fancy Checkbox / Radio Button</title>
 
 	<style type="text/css">
 	/* This is the functional part. */
@@ -58,19 +58,21 @@
 </head>
 <body>
 	
-<p>This demonstrates how to do a pure CSS replacement of the input widget for both radio buttons and checkboxes.</p>	
+<p>This demonstrates how to do a pure CSS replacement of the input widget for both radio buttons and checkboxes.</p>
+
+<p><a href="https://github.com/dcmoore-gd/HTML-Experiments/blob/gh-pages/checked-input-replacement-css.html">View on GitHub</a></p>
 
 <form>
 	<fieldset>
 		<legend>Radio buttons</legend>
 
 		<div>
-			Radio Button 1
-			<label class="option" for="radio-1"><input type="radio" name="radio" value="radio-1" id="radio-1"><span></span></label>
+			<label for="radio-1">Radio Button 1</label>
+			<label class="option"><input type="radio" name="radio" value="radio-1" id="radio-1"><span></span></label>
 		</div>
 		<div>
-			Radio Button 2
-			<label class="option" for="radio-2"><input type="radio" name="radio" value="radio-2" id="radio-2"><span></span></label>
+			<label for="radio-2">Radio Button 2</label>
+			<label class="option"><input type="radio" name="radio" value="radio-2" id="radio-2"><span></span></label>
 		</div>
 	</fieldset>
 	
@@ -78,12 +80,12 @@
 		<legend>Checkbox buttons</legend>
 
 		<div>
-			Checkbox 1
-			<label class="option"><input type="checkbox" name="checkbox" value="checkbox-1"><span></span></label>
+			<label for="checkbox-1">Checkbox 1</label>
+			<label class="option"><input type="checkbox" name="checkbox" value="checkbox-1" id="checkbox-1"><span></span></label>
 		</div>
 		<div>
-			Checkbox 2
-			<label class="option"><input type="checkbox" name="checkbox" value="checkbox-2"><span></span></label>
+			<label for="checkbox-2">Checkbox 2</label>
+			<label class="option"><input type="checkbox" name="checkbox" value="checkbox-2" id="checkbox-2"><span></span></label>
 		</div>
 	</fieldset>
 	
